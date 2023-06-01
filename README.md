@@ -1,7 +1,7 @@
 <h1 align="center">
-    <img height="250" src="https://ik.imagekit.io/lcf9dsx9t/To-do/13_Loading.png?updatedAt=1685593432890">
-    <img height="250" src="https://ik.imagekit.io/lcf9dsx9t/To-do/13_Home_noTasks_.png?updatedAt=1685593433021">
-    <img height="250" src="https://ik.imagekit.io/lcf9dsx9t/To-do/13_Home.png?updatedAt=1685593433048">
+    <img height="300" src="https://ik.imagekit.io/lcf9dsx9t/To-do/13_Loading.png?updatedAt=1685593432890">
+    <img height="300" src="https://ik.imagekit.io/lcf9dsx9t/To-do/13_Home_noTasks_.png?updatedAt=1685593433021">
+    <img height="300" src="https://ik.imagekit.io/lcf9dsx9t/To-do/13_Home.png?updatedAt=1685593433048">
 </h1>
 
 # Indice
