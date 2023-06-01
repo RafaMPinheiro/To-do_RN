@@ -36,7 +36,3 @@ export const deleteStorage = async (id: number) => {
 
   await AsyncStorage.setItem('tasks', JSON.stringify(newTodos));
 };
-
-export const clearAsyncStorage = async () => {
-  AsyncStorage.clear();
-};

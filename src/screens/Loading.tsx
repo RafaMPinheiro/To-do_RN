@@ -1,8 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-// import { Container } from './styles';
-
 export const Loading: React.FC = () => {
   return (
     <View style={styles.Container}>
