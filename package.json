@@ -1,5 +1,5 @@
 {
-  "name": "to-do-RN",
+  "name": "to.do_RN",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
@@ -24,5 +24,6 @@
   },
   "private": true,
   "author": "Rafael Pinheiro <49412094+RafaMPinheiro@users.noreply.github.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": "https://github.com/RafaMPinheiro/To.do_RN.git"
 }

@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, TouchableOpacity, View, Alert } from 'react-native';
 
 import { Feather, MaterialIcons } from '@expo/vector-icons';
 
@@ -9,6 +9,7 @@ interface TasksProps {
   done: boolean;
   handleDone: (id: number) => void;
   handleDelete: (id: number) => void;
+  handleEditTask: (id: number, title: string) => void;
 }
 
 export const Tasks = ({ ...props }: TasksProps) => {
@@ -24,7 +25,28 @@ export const Tasks = ({ ...props }: TasksProps) => {
       return;
     }
     setColorTrash('#FF0000');
-    props.handleDelete(props.id);
+    Alert.alert(
+      'Remover item',
+      'Tem certeza que você deseja remover esse item?',
+      [
+        {
+          text: 'Cancelar',
+          onPress: () => {
+            setColorTrash('#505050');
+          },
+        },
+        {
+          text: 'Remover',
+          onPress: () => {
+            props.handleDelete(props.id);
+          },
+        },
+      ]
+    );
+  };
+
+  const handleEditTaskChange = () => {
+    props.handleEditTask(props.id, props.title);
   };
 
   const doneChange = () => {
@@ -55,13 +77,22 @@ export const Tasks = ({ ...props }: TasksProps) => {
           {props.title}
         </Text>
       </View>
-      <TouchableOpacity
-        onPress={() => {
-          handleDeleteChange();
-        }}
-      >
-        <Feather name="trash-2" size={20} color={colorTrash} />
-      </TouchableOpacity>
+      <View style={styles.iconsContainer}>
+        <TouchableOpacity
+          onPress={() => {
+            handleEditTaskChange();
+          }}
+        >
+          <Feather name="edit-3" size={20} color="#505050" />
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            handleDeleteChange();
+          }}
+        >
+          <Feather name="trash-2" size={20} color={colorTrash} />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -81,5 +112,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 10,
+  },
+  iconsContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 20,
   },
 });

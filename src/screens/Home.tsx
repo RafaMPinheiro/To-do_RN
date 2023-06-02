@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   StyleSheet,
   Text,
@@ -51,6 +51,12 @@ export const Home: React.FC = () => {
 
   const handleDone = async (id: number) => {
     await changeDoneStorage(id);
+    getTasks();
+  };
+
+  const handleEditTask = async (id: number, title: string) => {
+    setNewTaskTitle(title);
+    await deleteStorage(id);
     getTasks();
   };
 
@@ -112,6 +118,7 @@ export const Home: React.FC = () => {
               done={task.done}
               handleDone={handleDone}
               handleDelete={handleDelete}
+              handleEditTask={handleEditTask}
             />
           ))}
         </View>

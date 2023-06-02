@@ -29,6 +29,19 @@ export const changeDoneStorage = async (id: number) => {
   await AsyncStorage.setItem('tasks', JSON.stringify(newTodos));
 };
 
+export const changeTaskStorage = async (id: number, task: string) => {
+  const todos = await getStorage('tasks');
+
+  const newTodos = todos.map((todo: any) => {
+    if (todo.id === id) {
+      todo.task = task;
+    }
+    return todo;
+  });
+
+  await AsyncStorage.setItem('tasks', JSON.stringify(newTodos));
+};
+
 export const deleteStorage = async (id: number) => {
   const todos = await getStorage('tasks');
 
