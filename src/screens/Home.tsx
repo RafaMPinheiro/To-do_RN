@@ -1,22 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import {
   StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
   View,
-} from 'react-native';
+} from "react-native";
 import {
   changeDoneStorage,
   clearAsyncStorage,
   deleteStorage,
   getStorage,
   setStorage,
-} from '../utils/storage';
+} from "../utils/storage";
 
-import { Tasks } from '../components/Tasks';
+import { Tasks } from "../components/Tasks";
 
-import { AntDesign } from '@expo/vector-icons';
+import { AntDesign } from "@expo/vector-icons";
 
 interface TasksProps {
   id: number;
@@ -25,12 +25,12 @@ interface TasksProps {
 }
 
 export const Home: React.FC = () => {
-  const [newTaskTitle, setNewTaskTitle] = useState('');
+  const [newTaskTitle, setNewTaskTitle] = useState("");
   const [taksCount, setTaksCount] = useState(0);
   const [tasks, setTasks] = useState([] as TasksProps[]);
 
   const getTasks = async () => {
-    const data = await getStorage('tasks');
+    const data = await getStorage("tasks");
     if (data) {
       setTasks(data);
       setTaksCount(data.length);
@@ -38,14 +38,14 @@ export const Home: React.FC = () => {
   };
 
   const handleAddTask = async () => {
-    if (newTaskTitle === '') return;
+    if (newTaskTitle === "") return;
     const newTask = {
       id: taksCount,
       title: newTaskTitle,
       done: false,
     };
-    await setStorage('tasks', newTask);
-    setNewTaskTitle('');
+    await setStorage("tasks", newTask);
+    setNewTaskTitle("");
     getTasks();
   };
 
@@ -84,7 +84,7 @@ export const Home: React.FC = () => {
           </TouchableOpacity>
 
           <Text style={styles.textTasksHeader}>
-            Você tem{' '}
+            Você tem{" "}
             <Text style={styles.textTasksCountHeader}>{taksCount} tarefas</Text>
           </Text>
         </View>
@@ -130,13 +130,13 @@ export const Home: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ECECEC',
+    backgroundColor: "#ECECEC",
   },
   bgHeader: {
-    backgroundColor: '#442F74',
+    backgroundColor: "#442F74",
     height: 135,
-    width: '120%',
-    position: 'absolute',
+    width: "120%",
+    position: "absolute",
     top: 0,
     left: 0,
   },
@@ -145,60 +145,60 @@ const styles = StyleSheet.create({
     gap: 30,
   },
   textHeader: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     marginTop: 40,
   },
   logo: {
-    color: '#FFF',
-    fontFamily: 'Roboto',
+    color: "#FFF",
+    fontFamily: "Roboto",
     fontSize: 30,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   textTasksHeader: {
-    color: '#FFF',
+    color: "#FFF",
     fontSize: 14,
   },
   textTasksCountHeader: {
-    color: '#FFF',
+    color: "#FFF",
     fontSize: 14,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   inputContainer: {
-    backgroundColor: '#FFF',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    backgroundColor: "#FFF",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     paddingHorizontal: 20,
     height: 50,
     borderRadius: 5,
   },
   inputContent: {
-    width: '90%',
-    height: '90%',
+    width: "90%",
+    height: "90%",
   },
   inputIcon: {
-    height: '90%',
-    width: '15%',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+    height: "90%",
+    width: "15%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
   tasksContainer: {
     marginTop: 50,
   },
   noTasksContainer: {
     height: 250,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
   noTasksText: {
-    color: '#505050',
+    color: "#505050",
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
 });
