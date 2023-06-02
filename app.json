@@ -15,7 +15,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.rafapinheiro.Todo"
     },
     "android": {
       "package": "com.rafapinheiro.Todo"
@@ -24,6 +25,12 @@
       "eas": {
         "projectId": "2c478621-0904-43fd-81d6-f52a77ba03ae"
       }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/2c478621-0904-43fd-81d6-f52a77ba03ae"
     }
   }
 }

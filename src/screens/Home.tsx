@@ -66,6 +66,7 @@ export const Home: React.FC = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
+        <View style={styles.bgHeader}></View>
         <View style={styles.textHeader}>
           <TouchableOpacity
             onPress={async () => {
@@ -88,7 +89,10 @@ export const Home: React.FC = () => {
             value={newTaskTitle}
             onChangeText={setNewTaskTitle}
           />
-          <TouchableOpacity onPress={() => handleAddTask()}>
+          <TouchableOpacity
+            style={styles.inputIcon}
+            onPress={() => handleAddTask()}
+          >
             <AntDesign name="arrowright" size={20} color="#505050" />
           </TouchableOpacity>
         </View>
@@ -121,10 +125,17 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#ECECEC',
   },
-  header: {
+  bgHeader: {
     backgroundColor: '#442F74',
     height: 135,
+    width: '120%',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+  },
+  header: {
     paddingHorizontal: 30,
+    gap: 30,
   },
   textHeader: {
     display: 'flex',
@@ -156,11 +167,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 20,
     height: 50,
-    marginTop: 30,
     borderRadius: 5,
   },
   inputContent: {
     width: '90%',
+    height: '90%',
+  },
+  inputIcon: {
+    height: '90%',
+    width: '15%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   tasksContainer: {
     marginTop: 50,
