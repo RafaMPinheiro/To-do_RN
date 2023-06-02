@@ -38,7 +38,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
     $ cd To-do_RN
 
     # Instalar as dependências
-    $ yarn init
+    $ yarn install
 
     # Iniciar o projeto
     $ yarn start
