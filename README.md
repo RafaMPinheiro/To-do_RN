@@ -23,7 +23,6 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 - [ReactNative](https://reactnative.dev/)
 - [TypesScript](https://www.typescriptlang.org/)
 - [Async Storage](https://react-native-async-storage.github.io/async-storage/)
-- [Figma](https://www.figma.com/file/9xmgtj8L1GCZZXi41B1NmH/To-do-React-Native?type=design&node-id=0%3A1&t=uEYhwZ1hgXeZ4VR1-1)
 
 ---
 
@@ -38,7 +37,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
     $ cd To.do_RN
 
     # Instalar as dependências
-    $ yarn install
+    $ yarn
 
     # Iniciar o projeto
     $ yarn start
